@@ -8,6 +8,12 @@ sock.bind( serverInfo )
 sock.listen( 5 )
 print( '********************\nReady to accept a client connection request' )
 
+
+
+
+
+
+"""""
 try:
     while True:
         connection, clientInfo = sock.accept( )
@@ -43,7 +49,7 @@ try:
             print( 'exception 1' )
 except:
     print( 'exception 2' )
-
+"""
 '''
 The socket.bind() method in Python is used to to bind a SERVER to a specific IP address and a port.
 
