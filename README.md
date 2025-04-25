@@ -1,49 +1,98 @@
 # TCP-socket-Project
 04/10/25 my first Networking Project
 
- TCP Socket Project — Image File Transfer
-A simple TCP client-server project built with Python, allowing the transfer of image files (JPEG, PNG) over a TCP connection with a progress bar and automatic preview after receiving.
+🖥️ TCP Image Transfer over Sockets
 
 
 
-Server listens for client connections
 
-Client connects and sends:
 
-Filename
+A lightweight TCP Client/Server application for transferring image files over a secure socket connection with:
 
-File size
+Progress tracking 📈
 
-File data
+Auto-preview after reception 🖼️
 
-Server:
-
-Receives and saves the file
-
-Previews the image
-
-Then continues simple text chat if needed
+Optional text chatting 💬
 
 ✨ Features
-📡 TCP communication between client and server
 
-🖼️ Send any image file (JPG, PNG, etc.)
+📤 Send image files (JPEG, PNG, etc.)
 
-📈 Real-time progress bar using tqdm
+📈 Real-time transfer progress via tqdm
 
-📂 Save received files automatically
+🖼️ Auto-preview received images using Pillow
 
-🖥️ Auto-preview the received image using Pillow
+🔄 Simple two-way messaging after file transfer
 
-💬 Optional text messaging after file transfer
+🎯 Single socket connection — no need to reconnect
 
-🔒 Single connection handling both file and messages
+⚡ Fast, lightweight, and easy to extend
+
+🛠️ Requirements
+
+Python 3.8+
+
+Install dependencies:
+
+pip install tqdm pillow
+
+(Optional) For AVIF format support:
+
+pip install pillow-avif-plugin
+
+🚀 Getting Started
+
+1⃣ Run the Server
+
+python server.py
+
+The server waits for a client connection and auto-previews incoming images.
+
+2⃣ Run the Client
+
+python client.py
+
+The client sends the selected image file to the server and enters text chat mode.
+
+📂 Project Structure
+
+TCP-socket-Project/
+├── server.py     # Server script (receiver)
+├── client.py     # Client script (sender)
+└── images/       # Folder containing your images (client side)
+    └── your_image.jpg
+
+🔥 Preview
+
+Client Uploading
+
+Server Receiving
 
 
-/TCP-socket-Project
-    ├── server.py
-    ├── client.py
-    └── images/
-         └── your_image.jpg
 
-         
+
+
+Real-time upload progress and image preview after transfer!
+
+🎯 Usage Example
+
+✅ Send images✅ Preview on server✅ Switch to chat mode easily
+
+# client.py
+filepath = r"C:\path\to\your\image.jpg"
+
+📜 License
+
+This project is licensed under the MIT License.
+
+❤️ Acknowledgments
+
+Python Socket Library
+
+TQDM Progress Bar
+
+Pillow Imaging Library
+
+✨ Star this repo if you like it!
+
