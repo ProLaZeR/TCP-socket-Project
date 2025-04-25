@@ -1,98 +1,106 @@
-# TCP-socket-Project
-04/10/25 my first Networking Project
-
 🖥️ TCP Image Transfer over Sockets
 
+A lightweight TCP Client-Server application for transferring image files over a TCP connection.
+It includes file transfer with progress bar, image preview after transfer, and simple text chat.
 
+📜 Project Description
+This project implements a Python-based TCP socket application that:
 
+Connects a client to a server
 
+Sends an image file (e.g., JPG, PNG)
 
-A lightweight TCP Client/Server application for transferring image files over a secure socket connection with:
+Displays a real-time progress bar while transferring
 
-Progress tracking 📈
+Auto-previews the received image on the server
 
-Auto-preview after reception 🖼️
+Enables basic text chat after the file transfer
 
-Optional text chatting 💬
+🛠️ Tools & Libraries Used
 
-✨ Features
-
-📤 Send image files (JPEG, PNG, etc.)
-
-📈 Real-time transfer progress via tqdm
-
-🖼️ Auto-preview received images using Pillow
-
-🔄 Simple two-way messaging after file transfer
-
-🎯 Single socket connection — no need to reconnect
-
-⚡ Fast, lightweight, and easy to extend
-
-🛠️ Requirements
-
-Python 3.8+
-
-Install dependencies:
-
-pip install tqdm pillow
-
-(Optional) For AVIF format support:
-
-pip install pillow-avif-plugin
-
-🚀 Getting Started
-
-1⃣ Run the Server
-
-python server.py
-
-The server waits for a client connection and auto-previews incoming images.
-
-2⃣ Run the Client
-
-python client.py
-
-The client sends the selected image file to the server and enters text chat mode.
-
+Tool / Library	Purpose
+Python 3.8+	Programming Language
+socket	TCP connection
+struct	Data packing (filename, filesize)
+tqdm	Progress bar during file transfer
+Pillow (PIL)	Image previewing after receiving
 📂 Project Structure
+kotlin
+Copy
+Edit
+TCP-Image-Transfer/
+├── README.md
+├── requirements.txt
+├── server.py       # Start this first
+├── client.py       # Start this second
+├── images/
+│   ├── 2.jpg
+│   └── 3.jpg
+🚀 How to Run
+Setup
+Install required libraries:
 
-TCP-socket-Project/
-├── server.py     # Server script (receiver)
-├── client.py     # Client script (sender)
-└── images/       # Folder containing your images (client side)
-    └── your_image.jpg
+bash
+Copy
+Edit
+pip install -r requirements.txt
+1️⃣ Start the Server
+bash
+Copy
+Edit
+python server.py
+The server will wait for a client connection and preview received images automatically.
 
-🔥 Preview
+2️⃣ Start the Client
+bash
+Copy
+Edit
+python client.py
+The client will:
 
-Client Uploading
+Send an image file
 
-Server Receiving
+Show a progress bar
 
+Enable text chat after the transfer
 
+🖼 Screenshots
 
+Client Progress	Server Preview
+🐞 Known Bugs / Limitations
+Only one client can connect at a time
 
+No file type validation
 
-Real-time upload progress and image preview after transfer!
+No resume if transfer is interrupted
 
-🎯 Usage Example
+Limited error handling during chat
 
-✅ Send images✅ Preview on server✅ Switch to chat mode easily
+🎯 Possible Enhancements
+Support for multiple simultaneous clients (threading or asyncio)
 
-# client.py
-filepath = r"C:\path\to\your\image.jpg"
+File type verification before accepting
+
+Encrypt connection using SSL/TLS
+
+Support for folders/multiple files
+
+GUI Application (using Tkinter or PyQT)
 
 📜 License
+This project is open-source and distributed under the MIT License.
 
-This project is licensed under the MIT License.
+🌟 Star this project if you like it!
+📋 requirements.txt file content (simple)
+text
+Copy
+Edit
+tqdm
+pillow
+✅ Recap
 
-❤️ Acknowledgments
-
-Python Socket Library
-
-TQDM Progress Bar
-
-Pillow Imaging Library
-
-✨ Star this repo if you like it!
-
+File	Purpose
+server.py	Start first — receive image and preview
+client.py	Start second — send image and chat
+requirements.txt	Install needed Python libraries
+images/	Folder for testing images
