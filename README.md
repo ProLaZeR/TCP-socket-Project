@@ -24,7 +24,7 @@ Previews the image
 
 Then continues simple text chat if needed
 
- Features
+✨ Features
 📡 TCP communication between client and server
 
 🖼️ Send any image file (JPG, PNG, etc.)
